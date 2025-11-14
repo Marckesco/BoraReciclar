@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recicla ABC</title>
+    <link rel="stylesheet" type="text/css" href="style.css?1" media="screen" />
+  </head>
+  <body>
+    <header>
+      <h1>Recicla ABC</h1>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    </header>
+    <nav id="mainNav" class="mobile-nav">
+      <a href="index.html">Inicio</a>
+      <a href="como-reciclar.html">Como Reciclar</a>
+      <a href="onde-reciclar.html">Onde Reciclar</a>
+      <a href="eletronicos.html">Descarte Eletrônicos</a>
+      <a href="reutilizar.html">Dicas</a>
+      <a href="#" onclick="abrirModal()">Quiz</a>
+    </nav>
+
+    <main>
+      <section id="eletronicos">
+        <div class="content">
+          <div>
+            <h2>Descarte de Eletrônicos</h2>
+            <p>
+              Aparelhos eletrônicos como celulares, baterias, computadores e
+              eletrodomésticos pequenos contêm metais pesados que contaminam o
+              solo e a água quando descartados de forma incorreta.
+            </p>
+            <p>
+              O ideal é levá-los a pontos de coleta especializados para garantir
+              que sejam desmontados e reaproveitados de forma segura.
+            </p>
+          </div>
+          <img
+            src="img/descarte-eletronico.jpg"
+            alt="Descarte correto de eletrônicos"
+          />
+        </div>
+      </section>
+
+      <div id="modalQuiz" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModal()">&times;</span>
+          <h2>Quiz Rápido</h2>
+          <p id="textoPergunta">Pergunta aqui...</p>
+
+          <!-- ESSA DIV É IMPORTANTE (os botões vão aparecer aqui) -->
+          <div class="botoesQuiz"></div>
+
+          <p id="respostaQuiz"></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Recicla ABC - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js?15"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recicla ABC</title>
+    <link rel="stylesheet" type="text/css" href="style.css?1" media="screen" />
+  </head>
+  <body>
+    <header>
+      <h1>Recicla ABC</h1>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    </header>
+    <nav id="mainNav" class="mobile-nav">
+      <a href="index.html">Inicio</a>
+      <a href="como-reciclar.html">Como Reciclar</a>
+      <a href="onde-reciclar.html">Onde Reciclar</a>
+      <a href="eletronicos.html">Descarte Eletrônicos</a>
+      <a href="reutilizar.html">Dicas</a>
+      <a href="#" onclick="abrirModal()">Quiz</a>
+    </nav>
+
+    <main>
+      <section id="onde-reciclar">
+        <div class="content">
+          <img src="img/mapa-locais.jpg" alt="Mapa com locais de reciclagem" />
+          <div>
+            <h2>Onde Reciclar?</h2>
+            <p>
+              Você pode encontrar pontos de coleta em sua cidade. Aqui estão
+              alguns exemplos:
+            </p>
+            <ul>
+              <li>
+                ✔️
+                <a
+                  href="https://portais.santoandre.sp.gov.br/semasa/residuos/estacoes-de-coleta/"
+                  target="_blank"
+                >
+                  Santo andré
+                </a>
+              </li>
+              <li>
+                ✔️
+                <a
+                  href="https://www.sbclimpeza.com.br/ecopontos/"
+                  target="_blank"
+                >
+                  São Bernardo do campo
+                </a>
+              </li>
+              <li>
+                ✔️
+                <a
+                  href="https://www.maua.sp.gov.br/Informacoes/Ecopontos.aspx"
+                  target="_blank"
+                >
+                  Mauá
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div id="modalQuiz" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModal()">&times;</span>
+          <h2>Quiz Rápido</h2>
+          <p id="textoPergunta">Pergunta aqui...</p>
+
+          <!-- ESSA DIV É IMPORTANTE (os botões vão aparecer aqui) -->
+          <div class="botoesQuiz"></div>
+
+          <p id="respostaQuiz"></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Recicla ABC - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js?15"></script>
+  </body>
+</html>

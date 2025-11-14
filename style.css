@@ -1,0 +1,282 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
+  display: flex; /* ativa flexbox */
+  align-items: center; /* alinha verticalmente no centro */
+  justify-content: center; /* centraliza horizontalmente */
+  position: relative; /* para posicionar o toggle */
+}
+
+nav {
+  background-color: #388e3c;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none; /* Esconde o botão de menu em telas grandes */
+}
+
+main {
+  padding: 2rem;
+}
+section {
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+}
+footer {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: #ffffff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 85%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  animation: slideIn 0.4s ease;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #333;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #2e7d32;
+  font-size: 1.8rem;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+#modalQuiz button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#modalQuiz button:hover:enabled {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+#respostaQuiz {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+section img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
+
+section h2 {
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  justify-content: left;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 3rem 10%;
+  }
+}
+
+ul {
+  text-align: left;
+  padding-left: 1.2rem; /* para alinhar e dar um espaçamento à esquerda */
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content img {
+  max-width: 35%;
+  flex-shrink: 0;
+}
+
+.content.reverse {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .content,
+  .content.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content img,
+  .content.reverse img {
+    max-width: 100%;
+  }
+
+  header {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    font-size: 1.8rem;
+    z-index: 999;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #2e7d32;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-toggle.rotated {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 110px; /* abaixo do header */
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 1000;
+    background-color: #388e3c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav a:first-child {
+    border-top: none;
+  }
+}
